@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Issue Tracker</title>
+</head>
+
+<body>
+    <header>
+        <h1>Issue Tracker</h1>
+        <button id="loginBtn" onclick="login()">Log In</button>
+        <button id="logoutBtn" onclick="logout()" style="display:none;">Log Out</button>
+    </header>
+    <main id="app" style="display:none;">
+        <div id="issue-form">
+            <h2>Create Issue</h2>
+            <form id="create-issue-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+
+                <label for="priority">Priority:</label>
+                <select id="priority" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <label for="assignee">Assignee:</label>
+                <input type="text" id="assignee" required>
+
+                <label for="attachment">Attachment:</label>
+                <input type="file" id="attachment">
+
+                <button type="button" onclick="createIssue()">Create Issue</button>
+            </form>
+        </div>
+
+        <div id="issue-list">
+            <!-- Issues will be dynamically added here -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
